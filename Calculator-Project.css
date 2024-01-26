@@ -1,0 +1,53 @@
+.calc {
+  width: 300px;
+}
+
+.screen {
+  font-family: Helvetica;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: end;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 60px;
+}
+
+.calc-button-row {
+  display: flex;
+  width: 100%;
+  font-family: Helvetica;
+  justify-content: space-between;
+}
+
+.calc-button:last-child {
+  background-color: orange;
+}
+
+.calc-button:last-child:hover {
+  background-color: goldenrod;
+}
+
+.calc-button {
+  width: 25%;
+  height: 70px;
+  font-size: large;
+  border-color: black;
+}
+
+.calc-button-double {
+  width: 50%;
+  font-size: large;
+  border-color: black;
+}
+
+.calc-button-triple {
+  width: 75%;
+  font-size: large;
+  border-color: black;
+}
+
+button:hover {
+  background-color: ivory;
+  transition: 0.4s;
+}
