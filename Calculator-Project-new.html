@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./Calculator-Project-new.css" />
+  </head>
+
+  <body>
+    <div class="calc">
+      <section class="screen">0</section>
+
+      <section class="calc-buttons">
+        <div class="calc-button-row">
+          <button id="calc-button-double" onclick="clear()">C</button>
+          <button id="symbol-button" onclick="enterSymbol(event)">←</button>
+          <button id="symbol-button" onclick="enterSymbol(event)">÷</button>
+        </div>
+        <div class="calc-button-row">
+          <button id="number-button" onclick="enterNumber(event)">7</button>
+          <button id="number-button" onclick="enterNumber(event)">8</button>
+          <button id="number-button" onclick="enterNumber(event)">9</button>
+          <button id="symbol-button" onclick="enterSymbol(event)">x</button>
+        </div>
+        <div class="calc-button-row">
+          <button id="number-button" onclick="enterNumber(event)">4</button>
+          <button id="number-button" onclick="enterNumber(event)">5</button>
+          <button id="number-button" onclick="enterNumber(event)">6</button>
+          <button id="symbol-button" onclick="enterSymbol(event)">-</button>
+        </div>
+        <div class="calc-button-row">
+          <button id="number-button" onclick="enterNumber(event)">1</button>
+          <button id="number-button" onclick="enterNumber(event)">2</button>
+          <button id="number-button" onclick="enterNumber(event)">3</button>
+          <button id="symbol-button" onclick="enterSymbol(event)">+</button>
+        </div>
+        <div class="calc-button-row">
+          <button id="number-button" onclick="enterNumber(event)">0</button>
+          <button id="symbol-button" onclick="enterSymbol(event)">=</button>
+        </div>
+      </section>
+    </div>
+    <script src="./Calculator-Project-new.js"></script>
+  </body>
+</html>

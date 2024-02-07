@@ -3,23 +3,22 @@
 // equal to show answer to math equation
 // C will clear screen to show zero and be ready for next equation
 
+let screen = document.querySelector(".screen");
 
+document.getElementById("calc-button-double").addEventListener("click", clear);
 
-function addNumber() {
-  let screen = document.getElementById(".screen").value; 
-    for (let i = 1; i < screen; i++) {
-      document.getElementById("answer").innerHTML += ` ${clickButton(i)}, `;
-    }
+function clear() {
+  screen.innerHTML = 0;
 }
 
-function clickButton(number) {
+document.getElementById("number-button").addEventListener("click", enterNumber);
+
+function enterNumber(event) {
+  screen.innerHTML += (event.target.innerHTML);
 }
 
-function init () {
-  document.addEventListener("click", function(value){
-  screen.innerText = value.target.innerText;
-  })
-}
-;
+document.getElementById("symbol-button").addEventListener("click", enterSymbol);
 
-init ();
+function enterSymbol(event) {
+  screen.innerHTML = (event.target.innerHTML);
+}
