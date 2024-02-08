@@ -35,13 +35,13 @@ button {
   border-color: black;
 }
 
-.calc-button-double {
+#calc-button-double  {
   width: 50%;
   font-size: large;
   border-color: black;
 }
 
-.calc-button-triple {
+#calc-button-triple {
   width: 75%;
   font-size: large;
   border-color: black;
