@@ -12,7 +12,7 @@
       <section class="calc-buttons">
         <div class="calc-button-row">
           <button id="calc-button-double" onclick="clear()">C</button>
-          <button id="symbol-button" onclick="enterSymbol(event)">←</button>
+          <button id="back-button" onclick="backButton()">←</button>
           <button id="symbol-button" onclick="enterSymbol(event)">÷</button>
         </div>
         <div class="calc-button-row">
@@ -35,7 +35,7 @@
         </div>
         <div class="calc-button-row">
           <button id="calc-button-triple" onclick="enterNumber(event)">0</button>
-          <button id="symbol-button" onclick="enterSymbol(event)">=</button>
+          <button id="result" onclick="calculate(event)">=</button>
         </div>
       </section>
     </div>

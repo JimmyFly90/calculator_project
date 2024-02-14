@@ -1,7 +1,8 @@
-// get buttons to show on black screen
-// convert button output on screen to be numbers and symbols
-// equal to show answer to math equation
+// get HTML for each button to show on black screen when clicked
 // C will clear screen to show zero and be ready for next equation
+// back button ← to remove last element on screen
+// convert button output on screen to be numbers and arithmetic symbols
+// equal to show answer to math equation
 
 let screen = document.querySelector(".screen");
 
@@ -11,51 +12,26 @@ function clear() {
   screen.innerHTML = 0;
 }
 
-document.getElementById("number-button").addEventListener("click", enterNumber);
+document.querySelector("calc-button-row").addEventListener("click", enterNumber);
 
 function enterNumber(event) {
-  screen.innerHTML += (event.target.innerHTML);
+  screen.innerHTML += parseInt((event.target.innerHTML));
 }
 
-document.getElementById("symbol-button").addEventListener("click", enterSymbol);
+document.querySelector("symbol-button").addEventListener("click", enterSymbol);
 
 function enterSymbol(event) {
   screen.innerHTML = (event.target.innerHTML);
 }
 
-function convert() {
-let numb = document.getElementById("number-button").value;
-  for (let i = 1; i < x; i++) 
-    screen.innerHTML = ` ${(i)}, `;
+document.getElementById("back-button").addEventListener("click", backButton);
+
+function backButton() {
+  screen.innerHTML = (screen.innerHTML.slice(0, -1));
 }
-switch(operator) {
-  case '1':
-    result = 1;
-    break;
-  case '2':
-    result = 2;
-    break;
-  case '3':
-    result = 3;
-    break;
-  case '4':
-    result = 4;
-    break;
-  case '5':
-    result = 5;
-    break;
-  case '6':
-    result = 6;
-    break;
-  case '7':
-    result = 7;
-    break;
-  case '8':
-    result = 8;
-    break;
-  case '9':
-    result = 9;
-    break;
-  default:
-    result = "Invalid operator";
+
+document.getElementById("result").addEventListener("click", calculate);
+
+function calculate() {
+    return screen.innerHTMl
 }
