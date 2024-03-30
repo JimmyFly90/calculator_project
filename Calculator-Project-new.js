@@ -6,32 +6,47 @@
 
 let screen = document.querySelector(".screen");
 
-document.getElementById("calc-button-double").addEventListener("click", clear);
-
 function clear() {
-  screen.innerHTML = 0;
+  screen.innerHTML = '0';
 }
 
-document.querySelector("calc-button-row").addEventListener("click", enterNumber);
-
-function enterNumber(event) {
-  screen.innerHTML += parseInt((event.target.innerHTML));
+function calculate() {
+  return screen.innerHTML;
 }
 
-document.querySelector("symbol-button").addEventListener("click", enterSymbol);
+function backButton() {
+  screen.innerHTML += screen.innerHTML.slice(0, -1);
+}
 
 function enterSymbol(event) {
   screen.innerHTML = (event.target.innerHTML);
 }
 
-document.getElementById("back-button").addEventListener("click", backButton);
+function enterNumber(event) {
+  const value = parseInt((event.target.innerHTML), 10);
 
-function backButton() {
-  screen.innerHTML = (screen.innerHTML.slice(0, -1));
+  /* your code originally was this
+
+   screen.innerHTML +=  parseInt((event.target.innerHTML), 10);
+
+   plus and equals will take the current value and add the new value to it
+
+   So what you want to do is check if the current value is 0, if it is then you want to replace it with the new value
+
+   If it is not 0 then you want to add the new value to the current value
+  */
+
+  if (screen.innerHTML === '0') {
+    // I converted this to a string because the if statement is checking for a string
+    screen.innerHTML = value.toString();
+  } else {
+    screen.innerHTML += value;
+  }
+
 }
 
-document.getElementById("result").addEventListener("click", calculate);
-
-function calculate() {
-    return screen.innerHTMl
-}
+document.getElementById("calc-button-double").addEventListener("click", clear, false);
+document.querySelector(".calc-button-row").addEventListener("click", enterNumber, false);
+document.querySelector("#symbol-button").addEventListener("click", enterSymbol, false);
+document.getElementById("back-button").addEventListener("click", backButton, false);
+document.getElementById("result").addEventListener("click", calculate, false);
